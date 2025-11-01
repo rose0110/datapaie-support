@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - DataPaie Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .pricing-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 60px 0;
+            margin-bottom: 60px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .pricing-card.featured {
+            border: 3px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .pricing-header h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .pricing-header p {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .pricing-price {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+        .pricing-price .amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: flex-start;
+        }
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        .pricing-features li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .pricing-features li.disabled {
+            color: #9ca3af;
+        }
+        .pricing-features li.disabled::before {
+            content: "✗";
+            color: #9ca3af;
+        }
+        .services-category {
+            margin-bottom: 60px;
+        }
+        .services-category h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .service-card h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        .service-card p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        .service-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .service-list li::before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DataPaie</h1>
+                    <span class="tagline">Support & Assistance</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="faq.html" class="nav-link">FAQ</a>
+                    <a href="https://www.datapaie.com/outils" class="nav-link" target="_blank">Outils</a>
+                    <a href="services.html" class="nav-link active">Services</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Nos Services & Forfaits</h1>
+                <p class="page-subtitle">Choisissez la formule adaptée à vos besoins et bénéficiez de notre expertise paie et RH.</p>
+            </div>
+        </section>
+
+        <!-- Forfaits -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Nos Forfaits</h2>
+                
+                <div class="pricing-grid">
+                    <!-- STARTER -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>STARTER</h3>
+                            <p>Mise à disposition du logiciel OpenPaye</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">À partir de 3€</span>
+                            par bulletin / mois
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Enregistrer vos salariés</li>
+                            <li>Saisir heures et variables de paie</li>
+                            <li>Générer les bulletins de paie</li>
+                            <li>Télécharger les bulletins (PDF/Excel)</li>
+                            <li>Consulter l'historique de paie</li>
+                            <li>Transmission des DSN</li>
+                            <li>Mises à jour réglementaires automatiques</li>
+                            <li class="disabled">Vérification par nos experts paie</li>
+                            <li class="disabled">Garantie zéro redressement URSSAF</li>
+                            <li class="disabled">Assistance prioritaire (réponse 24h)</li>
+                            <li class="disabled">Documents RH préparés</li>
+                            <li class="disabled">Paie 100% déléguée</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                    </div>
+
+                    <!-- PRO -->
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Meilleur rapport qualité-prix</div>
+                        <div class="pricing-header">
+                            <h3>PRO</h3>
+                            <p>Paie semi-assistée</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">À partir de 19€</span>
+                            par bulletin / mois
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Enregistrer vos salariés</li>
+                            <li>Saisir heures et variables de paie</li>
+                            <li>Générer les bulletins de paie</li>
+                            <li>Télécharger les bulletins (PDF/Excel)</li>
+                            <li>Consulter l'historique de paie</li>
+                            <li>Transmission des DSN</li>
+                            <li>Mises à jour réglementaires automatiques</li>
+                            <li>Vérification par nos experts paie</li>
+                            <li>Garantie zéro redressement URSSAF</li>
+                            <li>Assistance prioritaire (réponse 24h)</li>
+                            <li>Documents RH préparés</li>
+                            <li class="disabled">Paie 100% déléguée</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                    </div>
+
+                    <!-- VIP -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>VIP</h3>
+                            <p>Paie complètement externalisée</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">À partir de 30€</span>
+                            par bulletin / mois
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Enregistrer vos salariés</li>
+                            <li>Saisir heures et variables de paie</li>
+                            <li>Générer les bulletins de paie</li>
+                            <li>Télécharger les bulletins (PDF/Excel)</li>
+                            <li>Consulter l'historique de paie</li>
+                            <li>Transmission des DSN</li>
+                            <li>Mises à jour réglementaires automatiques</li>
+                            <li>Vérification par nos experts paie</li>
+                            <li>Garantie zéro redressement URSSAF</li>
+                            <li>Assistance prioritaire (réponse 24h)</li>
+                            <li>Documents RH préparés</li>
+                            <li>Paie 100% déléguée</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%;">Demander un devis</a>
+                    </div>
+                </div>
+
+                <div class="help-box" style="margin-top: 40px;">
+                    <p><strong>Mise en place du dossier</strong></p>
+                    <p>Disponible sur devis pour tous les forfaits. Incluse gratuitement avec la facturation annuelle.</p>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="https://www.datapaie.com/#tarifs" target="_blank" class="btn btn-outline">Voir le comparatif détaillé sur notre site</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Complémentaires -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-block">
+                    <h2 style="text-align: center; margin-bottom: 50px;">Services Complémentaires & Accompagnement</h2>
+                    <p class="section-intro" style="text-align: center; max-width: 800px; margin: 0 auto 60px;">Bénéficiez de notre expertise RH et digitale pour aller plus loin dans la gestion de votre entreprise.</p>
+                    
+                    <!-- Catégorie 1 : Gestion Administrative RH -->
+                    <div class="services-category">
+                        <h3>Gestion Administrative RH</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Rédaction de Contrats de Travail</h4>
+                                <p>Nous rédigeons tous vos contrats de travail conformes à la législation et à votre convention collective.</p>
+                                <ul class="service-list">
+                                    <li>CDI, CDD, alternance, stage</li>
+                                    <li>Temps partiel, temps plein</li>
+                                    <li>Avenants aux contrats</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <h4>Courriers aux Salariés</h4>
+                                <p>Rédaction de tous vos courriers officiels aux salariés dans le respect des procédures légales.</p>
+                                <ul class="service-list">
+                                    <li>Convocations (entretien, disciplinaire)</li>
+                                    <li>Avertissements et sanctions</li>
+                                    <li>Mise à pied conservatoire</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 11l3 3L22 4"></path>
+                                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                    </svg>
+                                </div>
+                                <h4>Attestations & Documents Obligatoires</h4>
+                                <p>Production de tous les documents administratifs RH obligatoires.</p>
+                                <ul class="service-list">
+                                    <li>Attestations employeur</li>
+                                    <li>Certificats de travail</li>
+                                    <li>Règlement intérieur</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie 2 : Rupture du Contrat de Travail -->
+                    <div class="services-category">
+                        <h3>Rupture du Contrat de Travail</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <h4>Accompagnement au Licenciement</h4>
+                                <p>Nous vous accompagnons dans toutes les étapes de la procédure de licenciement.</p>
+                                <ul class="service-list">
+                                    <li>Licenciement pour motif personnel</li>
+                                    <li>Licenciement pour motif économique</li>
+                                    <li>Licenciement pour faute</li>
+                                    <li>Calcul des indemnités</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="8.5" cy="7" r="4"></circle>
+                                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                                    </svg>
+                                </div>
+                                <h4>Rupture Conventionnelle</h4>
+                                <p>Accompagnement complet dans la négociation et la formalisation d'une rupture conventionnelle.</p>
+                                <ul class="service-list">
+                                    <li>Négociation avec le salarié</li>
+                                    <li>Calcul de l'indemnité</li>
+                                    <li>Rédaction de la convention</li>
+                                    <li>Homologation DREETS</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <h4>Autres Modes de Rupture</h4>
+                                <p>Gestion de tous les autres cas de fin de contrat.</p>
+                                <ul class="service-list">
+                                    <li>Démission</li>
+                                    <li>Départ à la retraite</li>
+                                    <li>Abandon de poste</li>
+                                    <li>Solde de tout compte</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie 3 : Instances Représentatives du Personnel -->
+                    <div class="services-category">
+                        <h3>Instances Représentatives du Personnel</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <h4>Mise en Place du CSE</h4>
+                                <p>Accompagnement complet pour la création et la mise en place de votre Comité Social et Économique.</p>
+                                <ul class="service-list">
+                                    <li>Vérification des seuils d'effectifs</li>
+                                    <li>Protocole d'accord préélectoral</li>
+                                    <li>Calcul des budgets CSE</li>
+                                    <li>Formation des élus</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Organisation des Élections Professionnelles</h4>
+                                <p>Gestion complète du processus électoral pour vos instances représentatives.</p>
+                                <ul class="service-list">
+                                    <li>Calendrier électoral</li>
+                                    <li>Listes électorales</li>
+                                    <li>Organisation du scrutin</li>
+                                    <li>Proclamation des résultats</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    </svg>
+                                </div>
+                                <h4>Négociation d'Accords d'Entreprise</h4>
+                                <p>Accompagnement dans la négociation et la rédaction de vos accords collectifs.</p>
+                                <ul class="service-list">
+                                    <li>Accords de temps de travail</li>
+                                    <li>Accords d'intéressement</li>
+                                    <li>Accords de télétravail</li>
+                                    <li>Dépôt auprès de la DREETS</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie 4 : Conformité & Audit -->
+                    <div class="services-category">
+                        <h3>Conformité & Audit</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.35-4.35"></path>
+                                    </svg>
+                                </div>
+                                <h4>Audit de Paie</h4>
+                                <p>Analyse complète de votre paie pour identifier les erreurs et optimiser vos charges.</p>
+                                <ul class="service-list">
+                                    <li>Contrôle de conformité</li>
+                                    <li>Détection des erreurs</li>
+                                    <li>Optimisation des charges</li>
+                                    <li>Rapport détaillé avec recommandations</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                </div>
+                                <h4>Mise en Conformité RGPD</h4>
+                                <p>Sécurisation de vos données RH et mise en conformité avec le RGPD.</p>
+                                <ul class="service-list">
+                                    <li>Audit des données RH</li>
+                                    <li>Registre des traitements</li>
+                                    <li>Politique de confidentialité</li>
+                                    <li>Formation des équipes</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Préparation au Contrôle URSSAF</h4>
+                                <p>Anticipez et préparez sereinement vos contrôles URSSAF.</p>
+                                <ul class="service-list">
+                                    <li>Pré-audit de conformité</li>
+                                    <li>Correction des anomalies</li>
+                                    <li>Préparation des documents</li>
+                                    <li>Accompagnement pendant le contrôle</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie 5 : Services Digitaux & Innovation -->
+                    <div class="services-category">
+                        <h3>Services Digitaux & Innovation</h3>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                </div>
+                                <h4>SIRH Personnalisé</h4>
+                                <p>Conception et déploiement d'un Système d'Information RH adapté à votre entreprise.</p>
+                                <ul class="service-list">
+                                    <li>Analyse de vos besoins</li>
+                                    <li>Choix de la solution</li>
+                                    <li>Paramétrage et personnalisation</li>
+                                    <li>Formation et accompagnement</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <h4>Intégration d'Intelligence Artificielle</h4>
+                                <p>Automatisez vos processus RH grâce à l'intelligence artificielle.</p>
+                                <ul class="service-list">
+                                    <li>Chatbots RH pour vos salariés</li>
+                                    <li>Analyse prédictive (turnover, absentéisme)</li>
+                                    <li>Automatisation de la saisie</li>
+                                    <li>Aide à la décision</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                    </svg>
+                                </div>
+                                <h4>Création d'Automatisations</h4>
+                                <p>Gagnez du temps en automatisant vos tâches répétitives.</p>
+                                <ul class="service-list">
+                                    <li>Workflows automatisés</li>
+                                    <li>Intégrations entre logiciels</li>
+                                    <li>Génération automatique de documents</li>
+                                    <li>Notifications et rappels</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-outline">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="help-box" style="margin-top: 60px; text-align: center;">
+                    <h3>Besoin d'un Service Sur-Mesure ?</h3>
+                    <p>Chaque entreprise est unique. Contactez-nous pour un devis personnalisé adapté à vos besoins spécifiques.</p>
+                    <a href="contact.html" class="btn btn-primary">Nous Contacter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DataPaie</h4>
+                    <p>Expert en paie et RH pour PME et TPE</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="https://www.datapaie.com/outils" target="_blank">Outils</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@datapaie.com</p>
+                    <p><a href="https://www.datapaie.com" target="_blank">www.datapaie.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataPaie. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Tawk.to -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/VOTRE_ID_TAWK/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>

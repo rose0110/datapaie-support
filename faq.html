@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DataPaie Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-answer-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        .faq-category {
+            margin-bottom: 40px;
+        }
+        .faq-category h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>DataPaie</h1>
+                    <span class="tagline">Support & Assistance</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="nav-link">Accueil</a>
+                    <a href="documentation.html" class="nav-link">Documentation</a>
+                    <a href="faq.html" class="nav-link active">FAQ</a>
+                    <a href="https://www.datapaie.com/outils" target="_blank" class="nav-link">Outils</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Questions Fréquentes</h1>
+                <p class="page-subtitle">Trouvez rapidement des réponses à vos questions sur DataPaie et nos services.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="faq-list">
+                    <!-- Catégorie : Offres et Tarifs -->
+                    <div class="faq-category">
+                        <h3>Offres et Tarifs</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Quelle est la différence entre les offres STARTER, PRO et VIP ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><strong>STARTER (3€/bulletin)</strong> : Vous gérez votre paie en totale autonomie avec le logiciel OpenPaye. Idéal si vous maîtrisez les bases de la paie.</p>
+                                    <p><strong>PRO (19€/bulletin)</strong> : En plus du logiciel, vos bulletins sont vérifiés par nos experts paie, vous bénéficiez d'une garantie zéro redressement URSSAF et d'une assistance prioritaire.</p>
+                                    <p><strong>VIP (30€/bulletin)</strong> : Nous gérons 100% de votre paie. Vous n'avez rien à faire, nous nous occupons de tout.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Comment fonctionne la facturation à l'usage ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Vous ne payez que pour les bulletins de paie réellement générés chaque mois. Par exemple, si vous avez 5 salariés et que vous êtes sur l'offre STARTER, vous paierez 15€ par mois (5 bulletins × 3€).</p>
+                                    <p>Le prélèvement est automatique chaque mois. Vous recevez une facture détaillée par email.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Puis-je changer d'offre en cours de route ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Oui, absolument ! Vous pouvez passer de STARTER à PRO ou VIP à tout moment. Le changement prend effet dès le mois suivant.</p>
+                                    <p>Contactez-nous simplement via le formulaire de contact ou par email pour demander le changement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie : Utilisation du Logiciel -->
+                    <div class="faq-category">
+                        <h3>Utilisation du Logiciel</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Que faire si j'ai besoin d'aide pour paramétrer mon dossier ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Nous proposons un service d'accompagnement à la mise en place. Nos experts vous guident pas à pas dans le paramétrage de votre dossier.</p>
+                                    <p>Vous pouvez également consulter nos vidéos de prise en main ou contacter notre support pour une assistance personnalisée.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Puis-je gérer la DSN moi-même ou DataPaie s'en charge ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Avec l'offre STARTER, le logiciel génère automatiquement votre DSN que vous pouvez transmettre vous-même.</p>
+                                    <p>Nous proposons également un service de gestion de la DSN en option. Nous nous chargeons de la transmission et du suivi pour vous.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Le logiciel est-il à jour avec les dernières réglementations ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Oui, OpenPaye est automatiquement mis à jour avec toutes les évolutions légales et réglementaires. Vous n'avez rien à faire, les mises à jour sont automatiques et incluses dans votre abonnement.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie : Gestion du Compte -->
+                    <div class="faq-category">
+                        <h3>Gestion du Compte</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Comment résilier mon abonnement ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Vous pouvez résilier votre abonnement à tout moment, sans engagement. Envoyez-nous simplement un email à support@datapaie.com.</p>
+                                    <p>La résiliation prend effet à la fin du mois en cours. Vous conservez l'accès jusqu'à cette date.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Que se passe-t-il si mon paiement échoue ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Vous recevrez un email vous invitant à mettre à jour vos informations de paiement. Vous avez 14 jours pour régulariser la situation.</p>
+                                    <p>Passé ce délai, votre accès au logiciel sera suspendu jusqu'au règlement.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Puis-je obtenir une facture pour mes paiements ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Oui, vous recevez automatiquement une facture par email chaque mois après le prélèvement. Vous pouvez également télécharger vos factures depuis votre espace client.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catégorie : Support et Assistance -->
+                    <div class="faq-category">
+                        <h3>Support et Assistance</h3>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Comment contacter le support ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Vous pouvez nous contacter via :</p>
+                                    <ul>
+                                        <li>Le formulaire de contact sur notre site</li>
+                                        <li>Email : support@datapaie.com</li>
+                                        <li>WhatsApp (lien disponible sur la page Contact)</li>
+                                        <li>Le chatbot en bas à droite de votre écran</li>
+                                    </ul>
+                                    <p>Les clients PRO et VIP bénéficient d'une assistance prioritaire avec réponse sous 24h.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Proposez-vous des formations ?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>Oui, nous proposons des sessions de formation personnalisées pour vous aider à maîtriser le logiciel et les bonnes pratiques de la paie.</p>
+                                    <p>Contactez-nous pour en savoir plus sur nos offres de formation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="help-box" style="margin-top: 60px;">
+                    <p><strong>Vous ne trouvez pas la réponse à votre question ?</strong></p>
+                    <p>Notre équipe est là pour vous aider.</p>
+                    <a href="contact.html" class="btn btn-primary">Contactez-Nous</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DataPaie</h4>
+                    <p>Expert en paie pour PME et TPE</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <ul>
+                        <li><a href="documentation.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="https://www.datapaie.com/outils" target="_blank">Outils</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: support@datapaie.com</p>
+                    <p><a href="https://www.datapaie.com" target="_blank">www.datapaie.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DataPaie. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Tawk.to -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/VOTRE_ID_TAWK/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+
+    <script src="main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Fermer tous les autres items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Ouvrir l'item cliqué si il n'était pas déjà ouvert
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
