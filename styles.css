@@ -1,19 +1,19 @@
 /* Variables CSS */
 :root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --secondary-color: #64748b;
-    --success-color: #10b981;
+    --primary-color: #FF8800; /* Orange DataPaie (du logo) */
+    --primary-hover: #E67700; /* Orange foncé */
+    --secondary-color: #0099CC; /* Bleu DataPaie (du logo) */
+    --success-color: #10b981; /* Vert standard (pas dans la palette DataPaie) */
     --error-color: #ef4444;
-    --bg-light: #f8fafc;
+    --bg-light: #F4F7F9; /* Fond clair */
     --bg-white: #ffffff;
-    --text-dark: #1e293b;
+    --text-dark: #1A232E; /* Bleu Nuit pour le texte */
     --text-gray: #64748b;
     --border-color: #e2e8f0;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --gradient-primary: linear-gradient(135deg, #FF8800 0%, #E67700 100%);
 }
 
 /* Reset & Base */
@@ -38,7 +38,7 @@ body {
 
 /* Header */
 .main-header {
-    background-color: var(--bg-white);
+    background-color: white; /* Fond blanc comme sur datapaie.com */
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -53,13 +53,13 @@ body {
 }
 
 .logo h1 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Logo en Orange */
     font-size: 24px;
     margin-bottom: 2px;
 }
 
 .tagline {
-    color: var(--text-gray);
+    color: var(--bg-white); /* Tagline en Blanc */
     font-size: 13px;
 }
 
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-link {
-    color: var(--text-dark);
+    color: var(--text-dark); /* Liens de navigation en bleu nuit pour fond blanc */
     text-decoration: none;
     font-weight: 500;
     padding: 8px 0;
@@ -107,7 +107,7 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, #0099CC 0%, #1A232E 100%); /* Dégradé bleu vers bleu nuit */
     color: white;
     padding: 60px 0;
     text-align: center;
@@ -127,7 +127,7 @@ body {
 
 /* Page Header */
 .page-header {
-    background: var(--bg-white);
+    background: white; /* Fond blanc comme sur datapaie.com */
     padding: 40px 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -135,12 +135,12 @@ body {
 .page-header h1 {
     font-size: 32px;
     margin-bottom: 10px;
-    color: var(--text-dark);
+    color: var(--text-dark); /* Titre en bleu nuit */
 }
 
 .page-subtitle {
     font-size: 16px;
-    color: var(--text-gray);
+    color: #666; /* Sous-titre en gris */
 }
 
 /* Quick Access Grid */
@@ -391,8 +391,9 @@ body {
 
 /* CTA Section */
 .cta-section {
-    background: var(--gradient-primary);
-    color: white;
+    background: var(--bg-light); /* Fond clair au lieu d'orange */
+    border: 2px solid var(--border-color);
+    color: var(--text-dark); /* Texte sombre sur fond clair */
     padding: 60px 0;
     margin: 60px 0;
     border-radius: 12px;
@@ -469,7 +470,9 @@ body {
     padding-top: 20px;
     text-align: center;
 }
-
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.8); /* Texte du footer en Blanc */
+}
 .footer-bottom p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
@@ -497,7 +500,7 @@ body {
 }
 
 .video-placeholder {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0099CC 0%, #1A232E 100%); /* Dégradé bleu vers bleu nuit */
     height: 200px;
     display: flex;
     flex-direction: column;
